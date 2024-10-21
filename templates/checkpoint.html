@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patroni Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .metric {
+            margin-bottom: 20px;
+        }
+        .metric h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .metric p {
+            margin: 0.5em 0 0 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Patroni Metrics</h1>
+        <div class="metric">
+            <h2>Postgres Running:</h2>
+            <p>{{ patroni_postgres_running }}</p>
+        </div>
+        <div class="metric">
+            <h2>Last WAL Replayed Timestamp:</h2>
+            <p>{{ patroni_xlog_replayed_timestamp }}</p>
+        </div>
+        <div class="metric">
+            <h2>Last WAL Replayed Timestamp (Human Readable):</h2>
+            <p>{{ patroni_xlog_replayed_timestamp_human_readable }}</p>
+        </div>
+    </div>
+</body>
+</html>
